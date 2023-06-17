@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dado</title>
+    <!-- Titulo Pestaña -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Añadimos el archivo de Estilos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <!-- Invoco el Script de fontAwesome para poder usarlo -->
+  </head>
+  <body>
+    <main>
+      <!-- Nueva Etiqueta Main -->
+      <section class="jugador jugador-activo jugador-0">
+        <!-- Nueva Etiqueta Section con clases -->
+        <h2 class="nombre">Jugador I</h2>
+        <!-- Etiquetas de Subtitulos -->
+        <p class="puntos" id="puntos-0">10</p>
+        <!-- <> con una Clase y un id -->
+        <div class="contador">
+          <!-- <> Nueva Etiqueta Madre -->
+          <p class="contador-etiqueta">Puntos Actules</p>
+          <!-- <> Con Clase -->
+          <p class="contador-actual" id="actual-0">1</p>
+          <!-- <> Con Clase -->
+        </div>
+      </section>
+      <section class="jugador jugador-activo jugador-1">
+        <!-- Nueva Etiqueta Section con clases -->
+        <h2 class="nombre">Jugador II</h2>
+        <!-- Etiquetas de Subtitulos -->
+        <p class="puntos" id="puntos-1">11</p>
+        <!-- <> con una Clase y un id -->
+        <div class="contador">
+          <!-- <> Nueva Etiqueta Madre -->
+          <p class="contador-etiqueta">Puntos Actules</p>
+          <!-- <> Con Clase -->
+          <p class="contador-actual" id="actual-1">1</p>
+          <!-- <> Con Clase -->
+        </div>
+      </section>
+
+      <img src="./dice-1.png" alt="Dado-Imagen" class="dado" />
+      <!-- Etiqueta donde voy a poner la imagen del dado -->
+
+      <button class="btn btn-nuevo" onclick="contadorNuevo()">
+        🔄 Juego Nuevo<span class="tamaño-emoji"> 🔄</span>
+        <p>Clicks: <a id="clicks-nuevo">0</a></p>
+      </button>
+      <!-- Nueva Etiqueta Boton, dentro una etiqueta span con clases -->
+      <button class="btn btn-juega" onclick="contadorJuego()">
+        🎲 Tirar Dados<span class="tamaño-emoji"> 🎲</span>
+        <p>Clicks: <a id="clicks-juego">0</a></p>
+      </button>
+      <!-- Nueva Etiqueta Boton, dentro una etiqueta span con clases -->
+      <button class="btn btn-quedarse" onclick="contadorCambio()">
+        🖐🏻 Quedarse<span class="tamaño-emoji"> 🖐🏻</span>
+        <p>Clicks: <a id="clicks-cambio">0</a></p>
+      </button>
+      <!-- Nueva Etiqueta Boton, dentro una etiqueta span con clases -->
+    </main>
+
+    <footer class="footer">
+      <!-- Etiqueta pie de pagina -->
+      <p>
+        <!-- Parrafo, ya contiene estilos predefinidos en CSS -->
+        &copy; Francisco Javier Martinez Duran
+        <br />
+        <!-- Espacio entre lineas -->
+        Fecha de Creacion: 06/15/2023, 5:25:24 PM
+        <!-- Texto en parrafo, con un span e invoco variable desde JS al id -->
+        <br />
+        Fecha Actual: <span id="date1"></span>
+        <!-- Texto en parrafo, con un span e invoco variable desde JS al id -->
+      </p>
+      <a
+        class="social"
+        href="https://www.linkedin.com/in/francisco-javier-martinez-duran-92055b275/"
+        target="_blank"
+        ><i class="fab fa-linkedin-in" style="color: rgb(33, 56, 205)"></i
+      ></a>
+      <!-- Hipervinculo, con una clase definida en CSS, en link de pestaña nueva, con etiqueta de FontAwesome, con estilos -->
+      <a
+        class="social"
+        href="https://github.com/FranciscoJavier001/JavaScript/tree/main/23_06_04-07-Duplicate-Dice-Game"
+        target="_blank"
+        ><i class="fas fa-code" style="color: rgb(59, 57, 60)"></i
+      ></a>
+      <!-- Hipervinculo, con una clase definida en CSS, en link de pestaña nueva, con etiqueta de FontAwesome, con estilos -->
+      <a
+        class="social"
+        href="https://github.com/FranciscoJavier001"
+        target="_blank"
+        ><i class="fa-brands fa-github" style="color: #430688"></i
+      ></a>
+      <!-- Hipervinculo, con una clase definida en CSS, en link de pestaña nueva, con etiqueta de FontAwesome, con estilos -->
+    </footer>
+
+    <script src="./script.js"></script>
+    <!-- Anexo la etiqueta script -->
+  </body>
+</html>

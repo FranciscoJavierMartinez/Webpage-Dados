@@ -1,0 +1,214 @@
+* {
+  /* Todo el DOM */
+  margin: 0; /* Que no tenga margenes */
+  padding: 0; /* Que no tenga margenes de adentro hacia afuera */
+  box-sizing: inherit; /* El tamaño de la caja se va a heredar */
+}
+
+html {
+  /* Etiqueta Html */
+  font-size: 62.5%; /* Tamaño de texto */
+  box-sizing: border-box; /* Tamaño de cajas, incluyen margin, padding y border al total asignado */
+}
+
+body {
+  /* A la etiqueta body */
+  font-family: serif; /* Fuente */
+  height: 100vh; /* Va a ocupar el 100 de la vista */
+  color: black; /* Color tippografia */
+  background-image: linear-gradient(
+    to top left,
+    #c3599e 50%,
+    #2e1c36 75%
+  ); /* Division DOM, y donde empieza (rosa) y donde va a terminar (negro) */
+  display: flex; /* Que todo valla hacia el lado derecho segun su elemento */
+  align-items: center; /* Items a la mitad del Body (depende flex) */
+  justify-content: center; /* Justifica el contenido hacia la mitad (depende flex) */
+}
+
+/* Diseño del contenedor */
+main {
+  /* A la etiqueta Main */
+  position: relative; /* Su posicion sera donde indica su etiqueta padre */
+  width: 100rem; /* Ancho de la Caja */
+  height: 60rem; /* Largo de la Caja */
+  background-color: rgb(
+    207,
+    197,
+    182,
+    0.3
+  ); /* Color de la caja - Entre mas Alto mas Intenso y mas Bajo, mas Debil */
+  backdrop-filter: blur(
+    200px
+  ); /* Es el desenfoque para hacerlos parcealmente transparentes */
+  filter: blur(); /* El filtro que voy a aplicar va a ser el desenfoque */
+  box-shadow: 1rem 3rem 5rem rgba(0, 0, 0, 0.9); /* Sombra de la caja, x,y,z; color sombra e itensidad */
+  border-radius: 12px; /* Caja Principal los bordes redondeados */
+  overflow: hidden; /* Es el Scroll, aqui lo desaparezco, pero tiene muchas funciones, se muestra ultimo */
+  display: flex; /* Para que el contenido valla hacia la derecha y no hacia abajo */
+}
+
+.jugador {
+  /* <> Por el momento solo contiene otro <> */
+  flex: 50%; /* Cada <> se dividio en 2 */
+  padding: 9rem; /* Margen de adentro hacia afuera */
+  display: flex; /* Movemos elementos <> */
+  flex-direction: column; /* Que se mantengan como columnas */
+  align-items: center; /* Alineo los elementos al centro */
+  transition: all; /* De la ubicacion donde vienen, sin tiempo */
+}
+
+/* Elementos */
+.nombre {
+  /* A la clase nombre en el DOM */
+  position: relative; /* Te mantienes dentro de tu etiqueta superior */
+  font-size: 4rem; /* Tamaño del texto */
+  text-transform: uppercase; /* Se cambian las mayusculas por minusculas */
+  letter-spacing: 2px; /* Espacio entre cada letra */
+  word-spacing: 3px; /* Espacio entre cada Oalabra */
+}
+
+.puntos {
+  /* Estilos a esta clase */
+  font-size: 8rem; /* Aumento el tamaño del texto */
+  color: #0c2db2; /* Se le cambia el color a los numeros */
+}
+
+.jugador-activo {
+  /* Cuando esta clase esta activa */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Es un fondo de gris, lo ultimo es la opacidad/transparencia */
+}
+
+.jugador-activo .contador {
+  /* Necesito personalizar el contador */
+  opacity: 1; /* Para que no se tape bajo la opacidad */
+}
+
+.contador {
+  /* Clase Contador donde va Puntos Actuales y el Cero */
+  background-color: #7b7274; /* Le Asigno un fondo de pantalla */
+  opacity: 0.8; /* La opacidad al fondo de pantalla */
+  border-radius: 10px; /* Le asigno bordes redondeados */
+  color: #fff; /* Color del texto */
+  width: 65%; /* Abarcas un 65% de tu espacio disponible */
+  padding: 2rem; /* Tamaño de lo gris, del contador */
+  text-align: center; /* Texto centrado */
+  transition: all 1s; /* Transiciona todo en 1 seg */
+}
+
+.contador-etiqueta {
+  /* A esta <p> Clase */
+  text-transform: uppercase; /* Su texto sea mayusculas */
+  margin-bottom: 1rem; /* Espacio hacia abajo de las letras */
+  font-size: 1.7rem; /* Tamaño de texto */
+  color: #ffffff; /* El color de las letras o el elemento mas brillante */
+}
+
+.contador-actual {
+  font-size: 3.5rem;
+}
+
+.dado {
+  /* A la clase dado */
+  position: absolute; /* Va a tener una posicion absoluta dentro de su elemento padre */
+  left: 50%; /* Posicionamos el objeto a la mitad en el eje de las x, ahi inicia */
+  top: 16.5rem; /* El espacio que tiene entre su top y el elemento */
+  transform: translateX(-50%); /* Asi el objeto queda en la mitad */
+  height: 10rem; /* Lo que va a medir */
+  box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.4); /* XYZ sombras - Ultimo el sombra difuminada */
+}
+
+.btn {
+  /* <> Botones */
+  position: absolute; /* Se posiciona sobre su etiqueta madre main */
+  left: 50%; /* Se crea un margen de 50% en la izquierda */
+  transform: translateX(
+    -50%
+  ); /* Otro poquito mas a la izquierda y de esta manera dejamos un elemento a la mitad */
+  color: #444; /* Color del texto de los dados */
+  background: none; /* Sin ningun tipo de fondo */
+  border: none; /* Elemento sin bordes */
+  font-size: 1.8rem; /* Tamaño del texto */
+  text-transform: uppercase; /* Texto en mayusculas */
+  cursor: pointer; /* Al pasar el cursor se vea la manita */
+  transition: all 0.2s; /* Que llegen desde su posicion madre hasta la actual */
+  background-color: rgb(
+    255,
+    255,
+    255,
+    0.6
+  ); /* El Background queda un poco mas humo */
+  backdrop-filter: blur(10px); /* Filtro aplicado sera difuminado */
+  padding: 0.7rem 2.5rem; /* A lo alto y a lo ancho espacio de adentro hacia afuera */
+  border-radius: 50rem; /* Que los bordes del elemento sean redondeados */
+  box-shadow: 0rem 1.75rem 3.5rem rgba(0, 0, 0, 0.4); /* XYZ - Difuminado e intensidad */
+}
+
+.btn-nuevo {
+  /* A esta clase le asignamos estilos */
+  top: 4rem; /* De arriba hacia abajo, un espacio */
+}
+.btn-juega {
+  /* A esta clase le asigno estilo */
+  top: 39rem; /* De arriba hacia abajo, un espacio */
+}
+.btn-quedarse {
+  /* A esta clase le asigno estilos personalizados */
+  top: 46rem;
+}
+
+.btn:hover {
+  /* Esta es una pseudoclase */
+  transform: translate(
+    -50%,
+    2px
+  ); /* Se va a quedar donde esta en el eje de las x, se va a mover hacia abajo */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5); /* Sombreado en eje x,y,z(no se altera en profundidad */
+}
+
+.btn::first-letter {
+  /* El primer Elemento, osea el emoji */
+  font-size: 2.2rem; /* Aumentale el tamaño  */
+  margin-right: 0.9rem; /* Margen del elemento a la derecha */
+}
+
+.tamaño-emoji {
+  /* Ultimo emoji en los botones */
+  font-size: 2.2rem; /* Aumentale el tamaño  */
+  margin-left: 0.6rem; /* Margen del elemento a la izquierda */
+}
+
+.oculto {
+  /* Esta Clase */
+  display: none; /* Desaparezco el dado */
+}
+
+footer {
+  /* Nueva Etiqueta en el Pie de Pagina, pero con una clase */
+  background-color: #191919; /*  Color de Fondo */
+  color: white; /* La tipografia de las letras es blanca */
+  position: absolute; /* Esta en la posicion absoluta de la pagina, justo debajo del body */
+  bottom: 0; /* Es el espaciado hacia abajo del footer */
+  width: 100%; /* La anchura del elemento */
+  text-align: center; /* Para centar el texto en el footer */ /* Espaciado en el footer */
+  line-height: 2.1vh; /* Espacio de cada linea */
+  font-size: small; /* Tamaño de texto */
+}
+
+.social {
+  /* Estilos personalizados a esta clase */
+  display: inline-block; /* Que se comporten en bloque de linea */
+  font-size: 3rem; /* Tamaño de cada elemento */
+  padding: 0.4rem 1.1rem; /* Separacion de los iconos sociables */
+}
+
+.social:hover {
+  /* Al pasarle el mouse por los iconos sociales */
+  filter: saturate(100%) brightness(150%); /* Saturarlos y aumenta el brillo */
+  transition-duration: 1.5s; /* Duracion de la transicion */
+}
